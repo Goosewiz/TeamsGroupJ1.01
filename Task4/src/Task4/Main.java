@@ -52,5 +52,6 @@ public class Main {
 		if (count > answer)
 			answer = count;
 		System.out.println(answer);
+		System.out.println(answer);
 	}
 }
