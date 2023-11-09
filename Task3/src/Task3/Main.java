@@ -14,9 +14,9 @@ public class Main {
 			double input = sc.nextDouble();
 			count = count + 1;
 			sum = sum + input;
-			if (input<min)
+			if (input < min)
 				min = input;
-			if (input>max)
+			if (input > max)
 				max = input;
 		}
 		average = sum / count;
