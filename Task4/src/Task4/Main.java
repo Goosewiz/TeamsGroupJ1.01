@@ -21,39 +21,41 @@ public class Main {
 			condition = -1;
 		else
 			condition = 0;
-		do {
-			number = -1000 + (int) (Math.random() * 2000);
-			System.out.print(number + " ");
-			if (number > 0 && condition > 0) {
-				count = count + 1;
-			} else if (number > 0 && condition < 0) {
-				if (count > answer) {
-					answer = count;
-				}
-				count = 1;
-				condition = 1;
-			} else if (number < 0 && condition < 0) {
-				count = count + 1;
-			} else if (number < 0 && condition > 0) {
-				if (count > answer) {
-					answer = count;
-				}
-				count = 1;
-				condition = -1;
-			} else {
-				if (count > answer) {
-					answer = count;
-				}
-				count = 0;
-				if (number > 0)
+		if (n > 1) {
+			do {
+				number = -1000 + (int) (Math.random() * 2000);
+				System.out.print(number + " ");
+				if (number > 0 && condition > 0) {
+					count = count + 1;
+				} else if (number > 0 && condition < 0) {
+					if (count > answer) {
+						answer = count;
+					}
+					count = 1;
 					condition = 1;
-				else if (number < 0)
+				} else if (number < 0 && condition < 0) {
+					count = count + 1;
+				} else if (number < 0 && condition > 0) {
+					if (count > answer) {
+						answer = count;
+					}
+					count = 1;
 					condition = -1;
-				else
-					condition = 0;
-			}
-			k++;
-		} while (k < n);
+				} else {
+					if (count > answer) {
+						answer = count;
+					}
+					count = 0;
+					if (number > 0)
+						condition = 1;
+					else if (number < 0)
+						condition = -1;
+					else
+						condition = 0;
+				}
+				k++;
+			} while (k < n);
+		}
 		if (count > answer)
 			answer = count;
 		System.out.println();
