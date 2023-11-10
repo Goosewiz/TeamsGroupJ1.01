@@ -13,7 +13,7 @@ public class Main {
 		cost = cost * 100;
 		cost = Math.round(cost);
 		cost = cost / 100;
-		double VAT = price/12*2;
+		double VAT = price - cost;
 		VAT = VAT * 100;
 		VAT = Math.round(VAT);
 		VAT = VAT / 100;
