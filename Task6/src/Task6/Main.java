@@ -4,17 +4,22 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int n = 0;
-		if (sc.hasNextInt()) {
-			n = sc.nextInt();
+		if (args.length == 1) {
+			int minutes = Integer.parseInt(args[0]);
+			if (minutes <= 0) {
+				System.out.println("Уже началось!");
+			} else {
+				int days = minutes / 1440;
+				minutes = minutes % 1440;
+				int hours = minutes / 60;
+				minutes = minutes % 60;
+				String answer = "";
+				WordEndings analyzer = new WordEndings();
+				answer = analyzer.dayEnding(days);
+				answer = answer + analyzer.hourEnding(hours);
+				answer = answer + analyzer.minuteEnding(minutes);
+				System.out.println(answer);
+			}
 		}
-		int days = n / 1440;
-		n = n % 1440;
-		int hours = n / 60;
-		n = n % 60;
-		System.out.println("Дни " + days);
-		System.out.println("Часы " + hours);
-		System.out.println("Минуты " + n);
 	}
 }
