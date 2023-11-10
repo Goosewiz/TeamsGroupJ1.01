@@ -9,52 +9,31 @@ public class Main {
 		if (sc.hasNextInt()) {
 			n = sc.nextInt();
 		}
-		int condition;
+		int prevNumberSign;
 		int count = 1;
 		int answer = 0;
 		int k = 1;
 		int number = -1000 + (int) (Math.random() * 2000);
 		System.out.print(number + " ");
 		if (number > 0)
-			condition = 1;
+			prevNumberSign = 1;
 		else if (number < 0)
-			condition = -1;
+			prevNumberSign = -1;
 		else
-			condition = 0;
+			prevNumberSign = 0;
 		if (n > 1) {
-			do {
+			 while (k < n) {
 				number = -1000 + (int) (Math.random() * 2000);
 				System.out.print(number + " ");
-				if (number > 0 && condition > 0) {
+				if ((number > 0 && prevNumberSign > 0) || (number < 0 && prevNumberSign < 0) || (number == 0 && prevNumberSign == 0)) {
 					count = count + 1;
-				} else if (number > 0 && condition < 0) {
-					if (count > answer) {
-						answer = count;
-					}
-					count = 1;
-					condition = 1;
-				} else if (number < 0 && condition < 0) {
-					count = count + 1;
-				} else if (number < 0 && condition > 0) {
-					if (count > answer) {
-						answer = count;
-					}
-					count = 1;
-					condition = -1;
 				} else {
-					if (count > answer) {
-						answer = count;
-					}
-					count = 0;
-					if (number > 0)
-						condition = 1;
-					else if (number < 0)
-						condition = -1;
-					else
-						condition = 0;
+					answer = Math.max(answer, count);
+					count = 1;
+					prevNumberSign = (int) Math.signum(number);
 				}
 				k++;
-			} while (k < n);
+			}
 		}
 		if (count > answer)
 			answer = count;
