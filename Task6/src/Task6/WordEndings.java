@@ -1,24 +1,24 @@
 package Task6;
 
 public class WordEndings {
-	public String dayEnding(int day) {
-		String answer = Integer.toString(day);
-		switch (day % 100) {
+	public String ending(int time, String ending1, String ending2, String ending3) {
+		String answer = Integer.toString(time);
+		switch (time % 100) {
 		case 11:
 		case 12:
 		case 13:
 		case 14:
-			answer = answer + " дней ";
+			answer = answer + ending1;
 			break;
 		default:
-			switch (day % 10) {
+			switch (time % 10) {
 			case 1:
-				answer = answer + " день ";
+				answer = answer + ending2;
 				break;
 			case 2:
 			case 3:
 			case 4:
-				answer = answer + " дня ";
+				answer = answer + ending3;
 				break;
 			case 5:
 			case 6:
@@ -26,73 +26,7 @@ public class WordEndings {
 			case 8:
 			case 9:
 			case 0:
-				answer = answer + " дней ";
-				break;
-			}
-			break;
-		}
-		return answer;
-	}
-
-	public String hourEnding(int hour) {
-		String answer = Integer.toString(hour);
-		switch (hour % 100) {
-		case 11:
-		case 12:
-		case 13:
-		case 14:
-			answer = answer + " часов ";
-			break;
-		default:
-			switch (hour % 10) {
-			case 1:
-				answer = answer + " час ";
-				break;
-			case 2:
-			case 3:
-			case 4:
-				answer = answer + " часа ";
-				break;
-			case 5:
-			case 6:
-			case 7:
-			case 8:
-			case 9:
-			case 0:
-				answer = answer + " часов ";
-				break;
-			}
-			break;
-		}
-		return answer;
-	}
-
-	public String minuteEnding(int minute) {
-		String answer = Integer.toString(minute);
-		switch (minute % 100) {
-		case 11:
-		case 12:
-		case 13:
-		case 14:
-			answer = answer + " минут ";
-			break;
-		default:
-			switch (minute % 10) {
-			case 1:
-				answer = answer + " минута ";
-				break;
-			case 2:
-			case 3:
-			case 4:
-				answer = answer + " минуты ";
-				break;
-			case 5:
-			case 6:
-			case 7:
-			case 8:
-			case 9:
-			case 0:
-				answer = answer + " минут ";
+				answer = answer + ending1;
 				break;
 			}
 			break;

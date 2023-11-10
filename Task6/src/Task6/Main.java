@@ -15,11 +15,22 @@ public class Main {
 				minutes = minutes % 60;
 				String answer = "";
 				WordEndings analyzer = new WordEndings();
-				answer = analyzer.dayEnding(days);
-				answer = answer + analyzer.hourEnding(hours);
-				answer = answer + analyzer.minuteEnding(minutes);
+				String ending1 = " дней ";
+				String ending2 = " день ";
+				String ending3 = " дня ";
+				answer = analyzer.ending(days, ending1, ending2, ending3);
+				ending1 = " часов ";
+				ending2 = " час ";
+				ending3 = " часа ";
+				answer = answer + analyzer.ending(hours, ending1, ending2, ending3);
+				ending1 = " минут ";
+				ending2 = " минута ";
+				ending3 = " минуты ";
+				answer = answer + analyzer.ending(minutes, ending1, ending2, ending3);
 				System.out.println(answer);
 			}
+		} else {
+			System.out.println("Введите, сколько минут осталось до события");
 		}
 	}
 }
