@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author gusev
+ *
+ */
+module testTask {
+}
