@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author gusev
- *
- */
-module testTask {
-}
