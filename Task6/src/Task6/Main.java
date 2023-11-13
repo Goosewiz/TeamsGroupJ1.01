@@ -28,6 +28,7 @@ public class Main {
 				ending3 = " минуты ";
 				answer = answer + analyzer.ending(minutes, ending1, ending2, ending3);
 				System.out.println(answer);
+				String test = "new commit";
 			}
 		} else {
 			System.out.println("Введите, сколько минут осталось до события");
